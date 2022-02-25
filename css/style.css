@@ -1,0 +1,1236 @@
+@charset 'utf-8';
+@import url('NanumSquareRound/nanumsquareround.css');
+@import url('NotoSansKR/stylesheet.css');
+@import url('AppleGothic/stylesheet.css');
+@import url('Roboto/stylesheet.css');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	vertical-align: middle;
+	border: 0;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+html {
+	font-size: 10px;
+	min-width: 1600px;
+	overflow-x: hidden; 
+}
+
+body {
+	font-family: 'NanumSquareRound';
+	color: #000;
+	overflow-x: hidden;
+}
+/* 모달창 */
+.modal {
+    position: fixed;
+    left:  0;
+    top:  0;
+    width:  100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999999999;
+}
+.modal-cont {
+    position: absolute;
+    left:  50%;
+    top:  50%;
+    transform: translate(-50%, -50%);
+    width:  450px;
+    height: 280px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 50%);
+}
+.modal-txt {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 50px;
+}
+.modal-desc {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 30px;
+}
+.modal-close {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 80px;
+    height: 25px;
+    color: #fff;
+    background: #000;
+    border: 0;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.modal-close:hover {
+    background: #f0b357;
+}
+
+.clearfix:after {
+	content: '';
+	position: relative;
+	display: block;
+	width: 100%;
+	clear: both;
+}
+
+
+/*공통*/
+
+.pagew {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+}
+
+.wrap {
+	position: relative;
+	display: block;
+}
+/* 고정메뉴 */
+.fix-menu {
+    position: fixed;
+    top: 338px;
+    right: 0;
+    width: 101px;
+    height: 262px;
+    background: #fff3bd;
+    border-radius: 10px 0 0 10px;
+    z-index: 999;
+}
+.fix-menu:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    display: block;
+    width: 71px;
+    height: 1px;
+    background: #edcd9e;
+}
+.f-menu-top {
+    position: relative;
+    display: block;
+    padding: 30px 0; 
+}
+.f-menu-top:hover .f-t-icon {
+    background: url('../images/dear-heart2.png') no-repeat center;
+    background-size: 100%;
+}
+.f-menu-top > a {
+    position: relative;
+    display: block;
+}
+.f-t-icon {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 17px;
+    background: url('../images/dear-heart.png') no-repeat center;
+    background-size: 100%;
+    margin: 0 auto;
+}
+.f-menu-top span {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: -1px;
+    color: #d1946f;
+    margin-top: 10px;
+}
+.f-menu-bottom {
+    position: relative;
+    display: block;
+    padding: 30px 0;
+}
+.f-menu-bottom:hover .f-b-icon {
+    background: url('../images/dear-smile2.png') no-repeat center;
+    background-size: 100%;
+}
+.f-menu-bottom > a {
+    position: relative;
+    display: block;
+}
+.f-b-icon {
+    position: relative;
+    display: block;
+    width: 17px;
+    height: 17px;
+    background: url('../images/dear-smile.png') no-repeat center;
+    background-size: 100%;
+    margin: 0 auto;
+}
+.f-menu-bottom span {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: -1px;
+    color: #d1946f;
+    margin-top: 10px;
+}
+/* 하단 고정메뉴 */
+.go-top {
+    position: fixed;
+    right: 26px;
+    bottom: 72px;
+    display: block;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.go-top-focus {
+    opacity: 1;
+}
+.go-top > a {
+    position: relative;
+    display: block;
+}
+.go-top-line {
+    position: relative;
+    display: block;
+    width: 2px;
+    height: 57px;
+    background: #0e3f97;
+    margin: 0 auto;
+}
+.go-top span {
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #0e3f97;
+    font-size: 14px;
+    margin-top: 15px;
+    font-family: 'robotobold';
+}
+/* 상단영역 */
+.header {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 1920px;
+	display: block;
+    border-bottom: 1px solid #ebebeb;
+    z-index: 9999999;
+    background: #fff;
+}
+.header > .pagew {
+	width: 1217px;
+    height: 111px;
+}
+.logo {
+    position: absolute;
+    top: 13px;
+    left: -8px;
+    display: block;
+}
+.logo > a {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background: url('../images/dear_pclogo.png') no-repeat center;
+    background-size: 100%;
+    width: 225px;
+    height: 70px;
+}
+.gnb {
+    position: absolute;
+    top: 0;
+    left: 303px;
+    display: block;
+}
+.depth1 {
+    position: relative;
+    display: block;
+}
+.depth1 > li {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 58px;
+}
+.mainmenu {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    line-height: 110px;
+    font-weight: 700;
+    color: #000;
+}
+.depth1 > li:nth-child(1) > .mainmenu:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 19px;
+    height: 20px;
+    background: url('../images/dear_m1_on.png') no-repeat center;
+    background-size: cover;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+.depth1 > li:nth-child(1) > .mainmenu:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: #d99d78;
+}
+.depth1 > li:nth-child(1) > .mainmenu {
+    color: #d99d78;
+}
+.depth1 > li:nth-child(1) > .mainmenu:hover:before {  
+    background: url('../images/dear_m1_on.png') no-repeat center;
+    background-size: cover;       
+}
+.depth1 > li:nth-child(2) > .mainmenu:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 21px;
+    height: 23px;
+    background: url('../images/dear_m2.png') no-repeat center;
+    background-size: 100%;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+.depth1 > li:nth-child(2) > .mainmenu:hover {
+    color: #d99d78;
+}
+.depth1 > li:nth-child(2) > .mainmenu:hover:before {   
+    background: url('../images/dear_m2_on.png') no-repeat center;
+    background-size: 100%;
+}
+.depth1 > li:nth-child(3) > .mainmenu:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 19px;
+    height: 23px;
+    background: url('../images/dear_m3.png') no-repeat center;
+    background-size: cover;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+.depth1 > li:nth-child(3) > .mainmenu:hover {
+    color: #d99d78;
+}
+.depth1 > li:nth-child(3) > .mainmenu:hover:before {   
+    background: url('../images/dear_m3_on.png') no-repeat center;
+    background-size: cover;
+}
+.depth1 > li:nth-child(4) > .mainmenu:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 21px;
+    height: 22px;
+    background: url('../images/dear_m4.png') no-repeat center;
+    background-size: cover;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+.depth1 > li:nth-child(4) > .mainmenu:hover {
+    color: #d99d78;
+}
+.depth1 > li:nth-child(4) > .mainmenu:hover:before {   
+    background: url('../images/dear_m4_on.png') no-repeat center;
+    background-size: cover;
+}
+.depth2 {
+    position: absolute;
+    
+    left: 50%;
+    top: 110px;
+    transform: translateX(-50%);
+    
+    display: none;
+    padding: 15px 0;
+    width: 190px;
+    background: #fff;
+    margin-top: 2px;
+}
+.depth2 > li {
+    position: relative;
+    display: block;
+}
+.depth2 > li > a {
+    position: relative;
+    display: block; 
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+    text-align: center;
+    line-height: 2.37;
+    margin: 0 
+
+}
+.depth2 > li > a:hover {
+    color: #d99d78;
+    font-weight: 800;
+}
+/* 주메뉴포커스유지 */
+.depth1 > li:nth-child(1):hover .mainmenu {
+    color: #d99d78;
+}
+.depth1 > li:nth-child(1):hover .mainmenu:before { 
+    content: '';
+    background: url('../images/dear_m1_on.png') no-repeat center;
+    background-size: cover;
+}
+
+.depth1 > li:nth-child(2):hover .mainmenu {
+    color: #d99d78;
+}
+.depth1 > li:nth-child(2):hover .mainmenu:before { 
+    content: '';
+    width: 21px;
+    height: 23px;
+    background: url('../images/dear_m2_on.png') no-repeat center;
+    background-size: 100%;
+    
+}
+.depth1 > li:nth-child(3):hover .mainmenu {
+    color: #d99d78;
+}
+.depth1 > li:nth-child(3):hover .mainmenu:before { 
+    width: 19px;
+    height: 23px;
+    content: '';
+    background: url('../images/dear_m3_on.png') no-repeat center;
+    background-size: cover;
+}
+.depth1 > li:nth-child(4):hover .mainmenu {
+    color: #d99d78;
+}
+.depth1 > li:nth-child(4):hover .mainmenu:before { 
+    content: '';
+    background: url('../images/dear_m4_on.png') no-repeat center;
+    background-size: cover;
+}
+
+
+
+
+.home {
+    position: absolute;
+    top: 37px;
+    right: 0;
+    display: block;
+    border: 1px solid #d9d9d9;
+    border-radius: 17.5px;
+    padding: 0 16px;
+}
+.home > a {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    color: #888;
+    line-height: 36px;
+}
+.home > a:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 13px;
+    background: url('../images/menu-home.png') no-repeat center;
+    background-size: cover;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+.home:hover > a {
+    color: #d99d78;
+}
+.home:hover > a:before {
+    background: url('../images/home-on.png') no-repeat center;
+    background-size: cover;
+}
+/* 캠페인 영역 */
+.campaign {
+    position: relative;
+    display: block;
+    margin-top: 111px;
+}
+.campaign-main {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 756px;
+    background: url('../images/dear-main.jpg') no-repeat center;
+}
+.cp-join {
+    position: absolute;
+    bottom: 182px;
+    left: 270px;
+    display: block;
+    width: 260px;
+    height: 87px;
+    background: #d99d78;
+}
+.cp-join > a {
+    position: relative;
+    display: block;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 87px;
+    color:#fff;
+    text-align: center;
+}
+.cp-story {
+    position: absolute;
+    bottom: 182px;
+    left: 550px;
+    display: block;
+    width: 260px;
+    height: 87px;
+    background: #974e1a;
+}
+.cp-story > a {
+    position: relative;
+    display: block;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 87px;
+    color:#fff;
+    text-align: center;
+}
+/* 캠페인 소개 영역 */
+.campaign-intro {
+    position: relative;
+    display: block;
+    background: #d99d78;
+}
+.campaign-intro > .pagew {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 907px;
+    background: url(../images/dear-deco2.png) no-repeat top 238px right 232px;
+}
+.intro-left {
+    position: relative;
+    display: block;
+    background: coral;
+}
+.intro-left > img {
+    position: absolute;
+    top: 132px;
+    left: 294px;
+    display: block;
+}
+.intro-right {
+    position: absolute;
+    top: 0;
+    right: 365px;
+    display: block;
+    width: 644px;
+    height: 100%;
+}
+.intro-titimg {
+    position: relative;
+    display: block;
+    margin-top: 141px;
+    margin-left: 260px;
+}
+.intro-tit {
+    position: relative;
+    display: block;
+    font-size: 65px;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: -3;
+    line-height: 1.23; 
+    text-align: center;
+    margin-top: 23px; 
+    margin-bottom: 33px;
+}
+.intro-sub {
+    position: relative;
+    display: block;
+    font-size: 22px;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: -1;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.yellow {
+    font-weight: 700;
+    color: #fff3bd;
+}
+.intro-graph {
+    position: relative;
+    display: block;
+}
+.intro-bottom {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: -1px;
+    color: #fff;
+    text-align: center;
+    margin-top: 28px;
+}
+/* 캠페인 비디오 영역 */
+.campaign-video {
+    position: relative;
+    display: block;
+}
+.campaign-video > .pagew {
+    position: relative;
+    display: block;
+    height: 962px;
+    width: 100%;
+    background: url('../images/dear-deco3.png') no-repeat left top 58%;
+}
+.video-tit-img {
+    position: relative;
+    margin-top: 118px;
+    margin-left: 50%;
+    transform: translateX(-50%)
+}
+.video-tit {
+    position: relative;
+    display: block;
+    font-size: 65px;
+    font-weight: 800;
+    color: #131f2a;
+    line-height: 1.23;
+    letter-spacing: -3px;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 56px;
+}
+.u-tube-video {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+.video-bottom {
+    position: relative;
+    display: block;
+    font-size: 18px;
+    color: #131f2a;
+    letter-spacing: -1px;
+    line-height: 1.83;
+    text-align: center;
+    margin-top: 42px;
+}
+/* 비주얼 영역 */
+.visual {
+    position: relative;
+    display: block;
+}
+.visual > .pagew {
+    position: relative;
+    display: block;
+    height: 1464px;
+    width: 100%;
+    background: 
+}
+.visual-top {
+    position: relative;
+    display: block;
+    height: 731px;
+    width: 1920px;
+}
+.t-left {
+    position: relative;
+    display: block;
+    width: 960px;
+    height: 731px;
+    float: left;
+    background: url('../images/dear-deco4.png') no-repeat left 34px bottom 112px #d99d78;
+}
+.top-tit-img {
+    position: relative;
+    display: block;
+    margin-top: 142px;
+    margin-left: 352px;
+}
+.v-t-tit {
+    position: relative;
+    display: block;
+    color: #fff;
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1.23;
+    letter-spacing: -3px;
+    margin-top: 34px;
+    margin-left: 352px;   
+}
+.v-t-content {
+    position: relative;
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 1.83;
+    margin-left: 352px;
+    margin-top: 50px;
+}
+.bold {
+    font-weight: 700;
+}
+.t-right {
+    position: relative;
+    display: block;
+    width: 960px;
+    height: 731px;
+    float: right;
+    background: url('../images/dear-banner1.jpg') no-repeat center;
+    background-size: 100%
+}
+.visual-bottom {
+    position: relative;
+    display: block;
+    height: 731px;
+    width: 1920px;
+}
+.b-left {
+    position: relative;
+    display: block;
+    float: left;
+    width: 960px;
+    height: 731px;
+    background: url('../images/dear-banner2.jpg') no-repeat center;
+    background-size: cover;
+}
+.b-right {
+    position: relative;
+    display: block;
+    width: 960px;
+    height: 731px;
+    float: right;
+    background: url('../images/dear-deco5.png') no-repeat right 38px bottom 74px #a96044;
+}
+.bottom-tit-img {
+    position: relative;
+    display: block;
+    margin-top: 100px;
+    margin-left: 76px;
+}
+.v-b-tit {
+    position: relative;
+    display: block;
+    color: #fff;
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1.23;
+    letter-spacing: -3px;
+    margin-top: 24px;
+    margin-left: 76px;
+}
+.v-b-content {
+    position: relative;
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 1.83;
+    margin-top: 43px;
+    margin-left: 76px;
+}
+.v-b-subtit {
+    position: relative;
+    display: block;
+    margin-top: 36px;
+    margin-left: 76px;
+}
+.v-b-subcontent {
+    position: relative;
+    display: block;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 1.83;
+    color: #fff;
+    margin-top: 35px;
+    margin-left: 76px;
+}
+/* 북커버 영역 */
+.book {
+    position: relative;
+    display: block;
+}
+.book > .pagew {
+    height: 1214px;
+    width: 1920px;
+    background: url('../images/dear-deco6.png') no-repeat right 125px bottom 240px,
+                url('../images/dear-deco7.png') no-repeat left 214px bottom 150px;
+}
+.book-tit-img {
+    position: relative;
+    display: block;
+    margin-top: 146px;
+    margin-left: 822px;
+}
+.book-tit {
+    position: relative;
+    display: block;
+    color: #131f2a;
+    font-size: 65px;
+    letter-spacing: -3px;
+    line-height: 1.23;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 24px;
+
+}
+.book-content {
+    position: relative;
+    display: block;
+    width: 1217px;
+    height: 210px;
+    margin-top: 132px;
+    margin-left: 353px;
+}
+.book-content b1 {
+    position: relative;
+    display: block;
+    font-size: 25px;
+    color: #131f2a;
+    letter-spacing: -2px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 130px;
+}
+.book-content span {
+    position: relative;
+    display: block;
+    font-size: 18px;
+    color: #131f2a;
+    letter-spacing: -1px;
+    line-height: 1.83;
+    text-align: center;
+    margin-top: 12px;
+}
+.content-1 {
+    position: relative;
+    display: block;
+    float: left;
+    width: 33.33%;
+}
+.content-1:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 403px;
+    display: block;
+    width: 1px;
+    height: 210px;
+    background: #dcdcdc;
+}
+.content-2 {
+    position: relative;
+    display: block;
+    float: left;
+    width: 33.33%;    
+}
+.content-2:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 403px;
+    display: block;
+    width: 1px;
+    height: 210px;
+    background: #dcdcdc;
+}
+.content-3 {
+    position: relative;
+    display: block;
+    float: left;
+    width: 33.33%;
+}
+.content-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+}
+.book-subcontent {
+    position: relative;
+    display: block;
+    font-size: 18px;
+    color: #131f2a;
+    letter-spacing: -1px;
+    line-height: 1.83;
+    text-align: center;
+    margin-top: 85px; 
+}
+.book-grs {
+    position: relative;
+    display: block;
+    margin-top: 50px;
+    margin-left: 662px;
+}
+.grs-content {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    color: #888888;
+    letter-spacing: -1px;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 25px;
+}
+/* 하단 영역 */
+.footer {
+    position: relative;
+    display: block;
+    background: #cccece;
+}
+.footer > .pagew {
+    width: 1920px;
+    height: 520px;
+}
+.f-top {
+    position: relative;
+    display: block;
+    height: 187px;
+    border-bottom: 1px solid #a3a5a5;
+}
+.f-t-tit {
+    position: absolute;
+    top: 48px;
+    left: 353px;
+    display: block;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.25px;
+    font-weight: 800;
+}
+.f-button {
+    position: absolute;
+    top: 37px;
+    right: 352px;
+    display: block;
+    width: 118px;
+    height: 35px;
+    border: 2px solid #a3a5a5;
+    border-radius: 19.5px;
+}
+.f-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 1px;
+    height: 25px;
+    background: #a3a5a5;
+    
+}
+.button-prev {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    display: block;
+    width: 10px;
+    height: 15px;
+    background: url('../images/partner-nav.png') no-repeat;
+    background-size: cover;
+    transform: scaleX(-1);
+    cursor: pointer;
+}
+.button-next {    
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    display: block;
+    width: 10px;
+    height: 15px;
+    background: url('../images/partner-nav.png') no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    
+}
+
+.button-prev.swiper-button-disabled, .button-next.swiper-button-disabled {
+    opacity: .35;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.footer-slide {
+    position: absolute;
+    top: 108px;
+    left: 353px;
+    display: block;
+    height: 39px;
+    width: 1200px;
+    margin: 0 auto;
+}
+.footer-link {
+    position: relative;
+    display: block;
+    width: 158px;
+    height: 39px;
+}
+.footer-link > a {
+    position: relative;
+    display: block;
+}
+.footer-link > a > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.f-bottom {
+    position: relative;
+    display: block;
+}
+.f-b-left {
+    position: relative;
+    display: block;
+    float: left;
+}
+.f-b-left-bold {
+    position: relative;
+    display: block;
+    font-weight: 800;
+    margin-left: 353px;
+}
+.f-b-left > a {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    letter-spacing: -0.25px;
+    color: #000;
+    float: left;
+    margin-right: 20px;
+    margin-top: 42px;
+    margin-bottom: 93px; 
+}
+.f-b-left-txt {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    color: #000;
+    letter-spacing: -0.25;
+    line-height: 26px;
+    margin-left: 353px;
+}
+.copy {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+    color: #777878;
+    margin-left: 353px;
+    margin-top: 22px;
+}
+.f-b-right {
+    position: relative;
+    display: block;
+    float: right;
+    width: 780px;
+    height: 100%;
+}
+.sns {
+    position: relative;
+    display: block;
+}
+.sns > li {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: #fff;
+    margin-right: 14px;
+    margin-top: 28px;
+    float: left;
+}
+.sns > li:first-child {
+    content: '';
+    position: relative;
+    display: block;
+    margin-left: 118px;
+}
+.sns > li > a {
+    position: relative;
+    display: block;
+}
+.sns > li > a > img {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.sponsor-tit {
+    position: relative;
+    display: block;
+    font-size: 22px;
+    color: #111;
+    letter-spacing: -0.25px;
+    font-weight: 800;
+    margin-top: 33px;
+    margin-bottom: 22px;
+}
+.sponsor-left {
+    position: relative;
+    display: block;
+    float: left;
+    width: 88px;
+    height: 28px;
+    border: 1px solid #7a7c7c;
+    border-radius: 14px;
+    line-height: 28px;
+    font-size: 15px;
+    letter-spacing: -0.25px;
+    color: #000;
+    text-align: center;
+    margin-right: 10px;
+}
+.sponsor-right {
+    position: relative;
+    display: block;
+    line-height: 28px;
+    font-size: 15px;
+    letter-spacing: -0.25px;
+    color: #000;
+}
+.donate-tit {
+    position: relative;
+    display: block;
+    color: #111;
+    font-size: 22px;
+    letter-spacing: -0.25px;
+    font-weight: 700;
+    margin-top: 33px;
+    margin-bottom: 22px;
+}
+.donate-1 {
+    position: relative;
+    display: block;
+}
+.donate-box1 {
+    position: relative;
+    display: block;
+    width: 88px;
+    height: 26px;
+    border: 1px solid #7a7c7c;
+    border-radius: 14px;
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.25px;
+    color: #000;
+    font-weight: 700;
+    float: left;
+}
+.donate-cont1 {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    color: #000;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+    margin-left: 11px; 
+    float: left;
+    
+}
+.donate-2 {
+    position: relative;
+    display: block;
+}
+.donate-box2 {
+    position: relative;
+    display: block;
+    width: 88px;
+    height: 26px;
+    border: 1px solid #7a7c7c;
+    border-radius: 14px;
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.25px;
+    color: #000;
+    font-weight: 700;
+    float: left;
+}
+.donate-cont2 {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    color: #000;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+    margin-left: 11px; 
+    float: left;
+}
+.donate-3 {
+    position: relative;
+    display: block;
+}
+.donate-box3 {
+    position: relative;
+    display: block;
+    width: 88px;
+    height: 26px;
+    border: 1px solid #7a7c7c;
+    border-radius: 14px;
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.25px;
+    color: #000;
+    font-weight: 700;
+    float: left;
+}
+.donate-cont3 {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    color: #000;
+    letter-spacing: -0.5px;
+    line-height: 30px;
+    margin-left: 11px; 
+    float: left;
+}
+
